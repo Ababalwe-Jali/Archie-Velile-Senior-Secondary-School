@@ -345,6 +345,29 @@ section { padding-block: var(--space-6xl); }
 .nav-toggle[aria-expanded="true"] .bar::before { transform: translateY(7px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] .bar::after { transform: translateY(-7px) rotate(-45deg); }
 
+/* ==========================================================================
+   MOBILE NAVIGATION — STICKY HEADER & MENU STACKING FIX
+   Fixes z-index/stacking only. No layout, spacing, colour, typography,
+   or animation changes. Desktop navigation is untouched.
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .main-nav {
+    z-index: 999;
+  }
+
+  .nav-toggle {
+    position: relative;
+    z-index: 1000;
+  }
+}
+
 @media (max-width: 900px) {
   .nav-toggle { display: flex; }
   .main-nav {
@@ -1016,6 +1039,55 @@ select:focus-visible {
   font-size: 14.5px;
   line-height: 1.6;
   color: var(--gray-light);
+}
+
+/* ==========================================================================
+   36. FACULTY CARDS — RESPONSIVE REFINEMENTS
+   Fixes overflow/wrap edge cases only. No layout, colour, spacing, or
+   animation changes. Reuses existing tokens exclusively.
+   ========================================================================== */
+
+/* Prevent the overlapping banner label from ever exceeding the card width */
+.faculty-banner {
+  max-width: calc(100% - (2 * var(--space-4xl)));
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  line-height: 1.35;
+}
+@media (max-width: 900px) {
+  .faculty-banner {
+    max-width: calc(100% - (2 * var(--space-2xl)));
+  }
+}
+
+/* Let contact rows wrap gracefully instead of overflowing horizontally */
+.faculty-contact-row {
+  flex-wrap: wrap;
+}
+.faculty-contact-row .label {
+  flex-shrink: 0;
+}
+.faculty-contact-row .value {
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Safety net: keep the HOD portrait from ever exceeding its column width */
+.faculty-hod .faculty-icon {
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  /* Stack label/value for maximum legibility on the narrowest phones */
+  .faculty-contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .faculty-contact-row .value {
+    text-align: left;
+  }
 }
 
 /* Below 640px, stack the description under its subject for readability
