@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Admissions | Archie Velile Senior Secondary School</title>
+<meta name="description" content="Complete and submit an online admission application for Archie Velile Senior Secondary School.">
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body data-page="admissions" class="admissions-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="utility-bar">
+  <div class="container">
+    <div class="contact-line">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 10c0 6.5-9 12-9 12s-9-5.5-9-12a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>Dimbaza, King William's Town, Eastern Cape · (043) 000 0000</span>
+    </div>
+    <div class="utility-links">
+      <a href="resources.html">Resource Centre</a>
+      <a href="vacancies.html">Careers@Archie</a>
+      <a href="tenders.html">Tenders</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">AV</span>
+      <span class="brand-name">Archie Velile SSS<span>Dimbaza · Eastern Cape</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="../index.html" data-nav="home">Home</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="academics.html" data-nav="academics">Academics</a>
+      <a href="admissions.html" data-nav="admissions">Admissions</a>
+      <a href="student-life.html" data-nav="student-life">Life @ Archie</a>
+      <a href="news.html" data-nav="news">News</a>
+      <a href="calendar.html" data-nav="calendar">Calendar</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+      <a href="admissions.html" class="btn btn-primary nav-apply">Apply</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+      <span class="bar"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero admissions-hero">
+    <div class="page-hero-triangle" aria-hidden="true"></div>
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">Home</a> / Online Admissions</p>
+      <span class="eyebrow">Online Admissions</span>
+      <h1>Apply to Archie Velile Senior Secondary School</h1>
+      <p class="lede" style="color: var(--gray-pale);">Complete your learner's application online, upload supporting documents, and review every detail before submission.</p>
+    </div>
+  </section>
+
+  <section class="section-soft admissions-workspace">
+    <div class="container">
+      <div class="admissions-shell reveal-scale">
+        <aside class="application-progress" aria-label="Application progress">
+          <ol>
+            <li class="is-active" data-progress-step="1">
+              <span class="progress-number">Step 1</span>
+              <span class="progress-title">Personal Information</span>
+            </li>
+            <li data-progress-step="2">
+              <span class="progress-number">Step 2</span>
+              <span class="progress-title">Supporting Documents</span>
+            </li>
+            <li data-progress-step="3">
+              <span class="progress-number">Step 3</span>
+              <span class="progress-title">Application Review</span>
+            </li>
+            <li data-progress-step="4">
+              <span class="progress-number">Step 4</span>
+              <span class="progress-title">Submit Application</span>
+            </li>
+          </ol>
+        </aside>
+
+        <div class="application-panel">
+          <form id="admissions-form" data-admissions-email="admissions@archievelile.school" novalidate>
+            <div class="form-alert" id="admissions-alert" role="alert" aria-live="polite"></div>
+
+            <section class="application-step is-active" data-step="1" aria-labelledby="step-1-title">
+              <div class="step-head">
+                <span class="eyebrow">Step 1</span>
+                <h2 id="step-1-title">Personal Information</h2>
+                <p class="lede">Please complete the learner's personal information exactly as it appears on official documents.</p>
+                <p class="caption">Fields marked with (*) are mandatory.</p>
+              </div>
+
+              <div class="form-section">
+                <h3>Learner Details</h3>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="learner-first-name">Learner First Name *</label>
+                    <input type="text" id="learner-first-name" name="learnerFirstName" autocomplete="given-name" required>
+                    <p class="error-msg">Please enter the learner's first name.</p>
+                  </div>
+                  <div class="field">
+                    <label for="middle-name">Middle Name</label>
+                    <input type="text" id="middle-name" name="middleName" autocomplete="additional-name">
+                    <p class="error-msg"></p>
+                  </div>
+                  <div class="field">
+                    <label for="surname">Surname *</label>
+                    <input type="text" id="surname" name="surname" autocomplete="family-name" required>
+                    <p class="error-msg">Please enter the learner's surname.</p>
+                  </div>
+                  <div class="field">
+                    <label for="date-of-birth">Date of Birth *</label>
+                    <input type="date" id="date-of-birth" name="dateOfBirth" required>
+                    <p class="error-msg">Please enter the learner's date of birth.</p>
+                  </div>
+                  <div class="field">
+                    <label for="gender">Gender *</label>
+                    <select id="gender" name="gender" required>
+                      <option value="">Select gender</option>
+                      <option>Female</option>
+                      <option>Male</option>
+                      <option>Non-binary</option>
+                      <option>Prefer not to say</option>
+                    </select>
+                    <p class="error-msg">Please select a gender.</p>
+                  </div>
+                  <div class="field">
+                    <label for="id-number">ID Number / Birth Certificate Number *</label>
+                    <input type="text" id="id-number" name="idNumber" required>
+                    <p class="error-msg">Please enter an ID or birth certificate number.</p>
+                  </div>
+                  <div class="field">
+                    <label for="nationality">Nationality *</label>
+                    <input type="text" id="nationality" name="nationality" required>
+                    <p class="error-msg">Please enter the learner's nationality.</p>
+                  </div>
+                  <div class="field">
+                    <label for="home-language">Home Language *</label>
+                    <input type="text" id="home-language" name="homeLanguage" required>
+                    <p class="error-msg">Please enter the learner's home language.</p>
+                  </div>
+                  <div class="field">
+                    <label for="additional-language">Additional Language</label>
+                    <input type="text" id="additional-language" name="additionalLanguage">
+                    <p class="error-msg"></p>
+                  </div>
+                  <div class="field">
+                    <label for="current-grade">Current Grade *</label>
+                    <select id="current-grade" name="currentGrade" required>
+                      <option value="">Select current grade</option>
+                      <option>Grade 7</option>
+                      <option>Grade 8</option>
+                      <option>Grade 9</option>
+                      <option>Grade 10</option>
+                      <option>Grade 11</option>
+                    </select>
+                    <p class="error-msg">Please select the learner's current grade.</p>
+                  </div>
+                  <div class="field">
+                    <label for="grade-applying-for">Grade Applying For *</label>
+                    <select id="grade-applying-for" name="gradeApplyingFor" required>
+                      <option value="">Select grade</option>
+                      <option>Grade 8</option>
+                      <option>Grade 9</option>
+                      <option>Grade 10</option>
+                      <option>Grade 11</option>
+                      <option>Grade 12</option>
+                    </select>
+                    <p class="error-msg">Please select the grade being applied for.</p>
+                  </div>
+                  <div class="field">
+                    <label for="previous-school">Previous School *</label>
+                    <input type="text" id="previous-school" name="previousSchool" required>
+                    <p class="error-msg">Please enter the learner's previous school.</p>
+                  </div>
+                  <div class="field">
+                    <label for="emis-number">EMIS Number</label>
+                    <input type="text" id="emis-number" name="emisNumber">
+                    <p class="hint">Optional, if applicable.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Disabilities</h3>
+                <div class="field">
+                  <label for="disability">Does the learner have a disability?</label>
+                  <select id="disability" name="disability">
+                    <option>None</option>
+                    <option>Physical Disability</option>
+                    <option>Visual Impairment</option>
+                    <option>Hearing Impairment</option>
+                    <option>Intellectual Disability</option>
+                    <option>Autism Spectrum Disorder</option>
+                    <option>ADHD</option>
+                    <option>Medical Condition</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="field conditional-field" id="disability-other-field" hidden>
+                  <label for="disability-other">Please specify disability *</label>
+                  <input type="text" id="disability-other" name="disabilityOther">
+                  <p class="error-msg">Please specify the disability.</p>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Residential Address</h3>
+                <div class="form-grid">
+                  <div class="field form-grid-wide">
+                    <label for="learner-street">Street Address *</label>
+                    <input type="text" id="learner-street" name="learnerStreet" autocomplete="street-address" required>
+                    <p class="error-msg">Please enter the learner's street address.</p>
+                  </div>
+                  <div class="field">
+                    <label for="learner-suburb">Suburb *</label>
+                    <input type="text" id="learner-suburb" name="learnerSuburb" required>
+                    <p class="error-msg">Please enter the suburb.</p>
+                  </div>
+                  <div class="field">
+                    <label for="learner-city">City *</label>
+                    <input type="text" id="learner-city" name="learnerCity" required>
+                    <p class="error-msg">Please enter the city.</p>
+                  </div>
+                  <div class="field">
+                    <label for="learner-province">Province *</label>
+                    <select id="learner-province" name="learnerProvince" required>
+                      <option value="">Select province</option>
+                      <option>Eastern Cape</option>
+                      <option>Free State</option>
+                      <option>Gauteng</option>
+                      <option>KwaZulu-Natal</option>
+                      <option>Limpopo</option>
+                      <option>Mpumalanga</option>
+                      <option>Northern Cape</option>
+                      <option>North West</option>
+                      <option>Western Cape</option>
+                    </select>
+                    <p class="error-msg">Please select a province.</p>
+                  </div>
+                  <div class="field">
+                    <label for="learner-postal">Postal Code *</label>
+                    <input type="text" id="learner-postal" name="learnerPostal" inputmode="numeric" required>
+                    <p class="error-msg">Please enter the postal code.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Learner Contact Information</h3>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="learner-email">Learner Email</label>
+                    <input type="email" id="learner-email" name="learnerEmail" autocomplete="email">
+                    <p class="error-msg">Please enter a valid email address.</p>
+                  </div>
+                  <div class="field">
+                    <label for="learner-mobile">Learner Mobile Number</label>
+                    <input type="tel" id="learner-mobile" name="learnerMobile" autocomplete="tel">
+                    <p class="error-msg"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Parent / Guardian Information</h3>
+                <p class="body-std section-note">Please provide the details of the learner's parent, guardian or next of kin.</p>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="guardian-name">Full Name *</label>
+                    <input type="text" id="guardian-name" name="guardianName" autocomplete="name" required>
+                    <p class="error-msg">Please enter the parent or guardian's full name.</p>
+                  </div>
+                  <div class="field">
+                    <label for="relationship">Relationship to Learner *</label>
+                    <select id="relationship" name="relationship" required>
+                      <option value="">Select relationship</option>
+                      <option>Mother</option>
+                      <option>Father</option>
+                      <option>Legal Guardian</option>
+                      <option>Grandmother</option>
+                      <option>Grandfather</option>
+                      <option>Aunt</option>
+                      <option>Uncle</option>
+                      <option>Foster Parent</option>
+                      <option>Caregiver</option>
+                      <option>Other</option>
+                    </select>
+                    <p class="error-msg">Please select a relationship.</p>
+                  </div>
+                  <div class="field">
+                    <label for="guardian-id">Parent ID Number *</label>
+                    <input type="text" id="guardian-id" name="guardianId" required>
+                    <p class="error-msg">Please enter the parent or guardian's ID number.</p>
+                  </div>
+                  <div class="field">
+                    <label for="guardian-mobile">Mobile Number *</label>
+                    <input type="tel" id="guardian-mobile" name="guardianMobile" autocomplete="tel" required>
+                    <p class="error-msg">Please enter a mobile number.</p>
+                  </div>
+                  <div class="field">
+                    <label for="guardian-alternative">Alternative Number</label>
+                    <input type="tel" id="guardian-alternative" name="guardianAlternative">
+                    <p class="error-msg"></p>
+                  </div>
+                  <div class="field">
+                    <label for="guardian-email">Email Address *</label>
+                    <input type="email" id="guardian-email" name="guardianEmail" autocomplete="email" required>
+                    <p class="error-msg">Please enter a valid email address.</p>
+                  </div>
+                  <div class="field">
+                    <label for="guardian-occupation">Occupation</label>
+                    <input type="text" id="guardian-occupation" name="guardianOccupation">
+                    <p class="error-msg"></p>
+                  </div>
+                  <div class="field">
+                    <label for="guardian-employer">Employer</label>
+                    <input type="text" id="guardian-employer" name="guardianEmployer">
+                    <p class="error-msg"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Guardian Residential Address</h3>
+                <div class="form-grid">
+                  <div class="field form-grid-wide">
+                    <label for="guardian-street">Street Address *</label>
+                    <input type="text" id="guardian-street" name="guardianStreet" autocomplete="street-address" required>
+                    <p class="error-msg">Please enter the guardian's street address.</p>
+                  </div>
+                  <div class="field">
+                    <label for="guardian-suburb">Suburb *</label>
+                    <input type="text" id="guardian-suburb" name="guardianSuburb" required>
+                    <p class="error-msg">Please enter the suburb.</p>
+                  </div>
+                  <div class="field">
+                    <label for="guardian-city">City *</label>
+                    <input type="text" id="guardian-city" name="guardianCity" required>
+                    <p class="error-msg">Please enter the city.</p>
+                  </div>
+                  <div class="field">
+                    <label for="guardian-province">Province *</label>
+                    <select id="guardian-province" name="guardianProvince" required>
+                      <option value="">Select province</option>
+                      <option>Eastern Cape</option>
+                      <option>Free State</option>
+                      <option>Gauteng</option>
+                      <option>KwaZulu-Natal</option>
+                      <option>Limpopo</option>
+                      <option>Mpumalanga</option>
+                      <option>Northern Cape</option>
+                      <option>North West</option>
+                      <option>Western Cape</option>
+                    </select>
+                    <p class="error-msg">Please select a province.</p>
+                  </div>
+                  <div class="field">
+                    <label for="guardian-postal">Postal Code *</label>
+                    <input type="text" id="guardian-postal" name="guardianPostal" inputmode="numeric" required>
+                    <p class="error-msg">Please enter the postal code.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="application-step" data-step="2" aria-labelledby="step-2-title">
+              <div class="step-head">
+                <span class="eyebrow">Step 2</span>
+                <h2 id="step-2-title">Supporting Documents</h2>
+                <p class="lede">Upload all required supporting documents before proceeding to the next step.</p>
+                <p class="caption">Accepted formats: PDF, JPG, PNG. Maximum file size: 5 MB per document.</p>
+              </div>
+
+              <div class="upload-grid">
+                <div class="upload-field" data-required-upload>
+                  <label for="birth-certificate">Learner Birth Certificate *</label>
+                  <input type="file" id="birth-certificate" name="birthCertificate" accept=".pdf,.jpg,.jpeg,.png" required>
+                  <p class="hint">PDF, JPG or PNG · Max 5 MB</p>
+                  <p class="error-msg">Please upload the learner's birth certificate.</p>
+                </div>
+                <div class="upload-field" data-required-upload>
+                  <label for="guardian-id-doc">Parent / Guardian ID *</label>
+                  <input type="file" id="guardian-id-doc" name="guardianIdDocument" accept=".pdf,.jpg,.jpeg,.png" required>
+                  <p class="hint">PDF, JPG or PNG · Max 5 MB</p>
+                  <p class="error-msg">Please upload the parent or guardian ID.</p>
+                </div>
+                <div class="upload-field" data-required-upload>
+                  <label for="school-report">Latest School Report *</label>
+                  <input type="file" id="school-report" name="schoolReport" accept=".pdf,.jpg,.jpeg,.png" required>
+                  <p class="hint">PDF, JPG or PNG · Max 5 MB</p>
+                  <p class="error-msg">Please upload the latest school report.</p>
+                </div>
+                <div class="upload-field" data-required-upload>
+                  <label for="proof-residence">Proof of Residence *</label>
+                  <input type="file" id="proof-residence" name="proofResidence" accept=".pdf,.jpg,.jpeg,.png" required>
+                  <p class="hint">PDF, JPG or PNG · Max 5 MB</p>
+                  <p class="error-msg">Please upload proof of residence.</p>
+                </div>
+                <div class="upload-field">
+                  <label for="immunisation-record">Immunisation Record</label>
+                  <input type="file" id="immunisation-record" name="immunisationRecord" accept=".pdf,.jpg,.jpeg,.png">
+                  <p class="hint">If applicable · PDF, JPG or PNG · Max 5 MB</p>
+                  <p class="error-msg">Please upload a PDF, JPG or PNG under 5 MB.</p>
+                </div>
+                <div class="upload-field">
+                  <label for="passport-permit">Passport / Permit</label>
+                  <input type="file" id="passport-permit" name="passportPermit" accept=".pdf,.jpg,.jpeg,.png">
+                  <p class="hint">International learners · PDF, JPG or PNG · Max 5 MB</p>
+                  <p class="error-msg">Please upload a PDF, JPG or PNG under 5 MB.</p>
+                </div>
+                <div class="upload-field">
+                  <label for="court-order">Court Order / Guardianship Documents</label>
+                  <input type="file" id="court-order" name="courtOrder" accept=".pdf,.jpg,.jpeg,.png">
+                  <p class="hint">If applicable · PDF, JPG or PNG · Max 5 MB</p>
+                  <p class="error-msg">Please upload a PDF, JPG or PNG under 5 MB.</p>
+                </div>
+                <div class="upload-field">
+                  <label for="other-documents">Other Supporting Documents</label>
+                  <input type="file" id="other-documents" name="otherDocuments" accept=".pdf,.jpg,.jpeg,.png" multiple>
+                  <p class="hint">PDF, JPG or PNG · Max 5 MB each</p>
+                  <p class="error-msg">Please upload PDF, JPG or PNG files under 5 MB.</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="application-step" data-step="3" aria-labelledby="step-3-title">
+              <div class="step-head">
+                <span class="eyebrow">Step 3</span>
+                <h2 id="step-3-title">Review Application</h2>
+                <p class="lede">Review the completed sections and confirm your uploaded documents before submission.</p>
+              </div>
+              <div id="review-output" class="review-stack" aria-live="polite"></div>
+            </section>
+
+            <section class="application-step" data-step="4" aria-labelledby="step-4-title">
+              <div class="step-head">
+                <span class="eyebrow">Step 4</span>
+                <h2 id="step-4-title">Submit Application</h2>
+                <p class="lede">Please confirm the declaration below before submitting the application.</p>
+              </div>
+              <div id="submit-summary" class="submit-summary"></div>
+              <label class="declaration-check" for="declaration">
+                <input type="checkbox" id="declaration" name="declaration" required>
+                <span>I declare that the information provided is true and complete.</span>
+              </label>
+              <p class="error-msg declaration-error" id="declaration-error">Please accept the declaration before submitting.</p>
+            </section>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-ghost step-button" id="prev-step">Back</button>
+              <button type="button" class="btn btn-primary step-button" id="next-step">Save and Continue</button>
+              <button type="submit" class="btn btn-primary step-button" id="submit-application" hidden>Submit Application</button>
+            </div>
+          </form>
+
+          <section id="application-success" class="application-success" hidden tabindex="-1" aria-labelledby="success-title">
+            <span class="success-mark" aria-hidden="true">✓</span>
+            <span class="eyebrow">Application Submitted</span>
+            <h2 id="success-title">Application Successfully Submitted</h2>
+            <p class="lede">Thank you for applying to Archie Velile Senior Secondary School.</p>
+            <p>Your application has been received successfully. Our Admissions Office will review your submission and contact you should additional information be required.</p>
+            <div class="reference-box">
+              <span>Reference Number</span>
+              <strong id="application-reference">AVSSS-2027-000000</strong>
+            </div>
+            <div class="success-actions">
+              <a href="../index.html" class="btn btn-primary">Return Home</a>
+              <button type="button" class="btn btn-download" id="download-confirmation">Download Confirmation</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>Archie Velile Senior Secondary School</h5>
+        <p class="body-std" style="color: var(--gray-pale); max-width: 30ch;">Dimbaza, King William's Town, Eastern Cape. A public school committed to academic excellence and community leadership.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./academics.html">Academics</a></li>
+          <li><a href="./admissions.html">Admissions</a></li>
+          <li><a href="./student-life.html">Student Life</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="./resources.html">Resource Centre</a></li>
+          <li><a href="./calendar.html">Academic Calendar</a></li>
+          <li><a href="./vacancies.html">Careers@Archie</a></li>
+          <li><a href="./tenders.html">Tender Notices</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li>Dimbaza, King William's Town, Eastern Cape, 5671</li>
+          <li><a href="tel:+27403070825">Tel: (040) 307 0825</a></li>
+          <li><a href="tel:+27403070825">Fax: (040) 656 3143</a></li>
+          <li><a href="mailto:archievelile@gmail.com">Email: archievelilesss@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Archie Velile Senior Secondary School. All rights reserved.</span>
+      <span>Committed to Academic Excellence & Learner Success</span>
+      <span>Proudly designed and developed by Innosoft Ventures</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../JavaScript/script.js"></script>
+</body>
+</html>
