@@ -345,20 +345,40 @@ section { padding-block: var(--space-6xl); }
 .nav-toggle[aria-expanded="true"] .bar::before { transform: translateY(7px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] .bar::after { transform: translateY(-7px) rotate(-45deg); }
 
+
 /* ==========================================================================
-   MOBILE — PREVENT HORIZONTAL SCROLL / OFF-CANVAS MENU LEAK
-   Locks horizontal scrolling at the document root so no element (including
-   the transformed, fixed-position off-canvas menu) can be swiped into view
-   before it's intentionally opened. No layout, colour, or animation
-   changes; desktop is unaffected since desktop never overflows here.
+   NAVBAR BRANDING — OFFICIAL SCHOOL LOGO
+   Replaces the text-based brand mark with a responsive logo image.
+   No changes to nav links, colours, layout, or sticky behaviour.
+   ========================================================================== */
+.brand-logo {
+  display: block;
+  height: 44px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .brand-logo {
+    height: 36px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE — PREVENT HORIZONTAL SCROLL / OFF-CANVAS MENU LEAK (ROOT-CAUSE FIX)
+   overflow-x: hidden on <body> was establishing body as a scroll container,
+   which broke position: sticky on .site-header (sticky was resolving
+   relative to body instead of the viewport). overflow: clip prevents
+   horizontal overflow/scroll without creating a scroll container, so
+   sticky positioning is restored while horizontal scroll stays locked.
    ========================================================================== */
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
-  overflow-x: hidden;
-  position: relative;
+  overflow-x: clip;
   max-width: 100vw;
 }
 
