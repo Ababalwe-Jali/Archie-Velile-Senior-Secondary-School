@@ -346,6 +346,29 @@ section { padding-block: var(--space-6xl); }
 .nav-toggle[aria-expanded="true"] .bar::after { transform: translateY(-7px) rotate(-45deg); }
 
 /* ==========================================================================
+   MOBILE NAVIGATION — WHITE PANEL CONTRAST & SCROLL FIX
+   Ensures charcoal text, visible dividers, and reliable scroll access to
+   the Apply CTA on a white background. No structural, typography, link,
+   or desktop changes.
+   ========================================================================== */
+@media (max-width: 900px) {
+  .main-nav a {
+    color: var(--charcoal);
+    border-bottom: 1px solid var(--gray-pale);
+  }
+
+  .main-nav {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: calc(var(--space-3xl) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .main-nav a.nav-apply {
+    margin-top: var(--space-lg);
+  }
+}
+
+/* ==========================================================================
    MOBILE NAVIGATION — FULL-HEIGHT PREMIUM MENU
    Expands the open menu to fill the viewport using absolute positioning
    and viewport units, which stay correct even if an ancestor's transform
