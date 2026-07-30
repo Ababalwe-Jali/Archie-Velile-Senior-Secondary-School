@@ -345,6 +345,20 @@ section { padding-block: var(--space-6xl); }
 .nav-toggle[aria-expanded="true"] .bar::before { transform: translateY(7px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] .bar::after { transform: translateY(-7px) rotate(-45deg); }
 
+/* ==========================================================================
+   MOBILE NAVIGATION — HAMBURGER ALIGNMENT & COLOUR FIX
+   Neutralises default button padding causing vertical misalignment, and
+   updates icon colour to charcoal. No changes to navbar height, spacing,
+   logo, sticky behaviour, or desktop navigation.
+   ========================================================================== */
+@media (max-width: 900px) {
+  .nav-toggle {
+    padding: 0;
+    line-height: 0;
+    box-sizing: border-box;
+    color: var(--charcoal);
+  }
+}
 
 /* ==========================================================================
    NAVBAR BRANDING — OFFICIAL SCHOOL LOGO
