@@ -392,7 +392,7 @@ section { padding-block: var(--space-6xl); }
   .main-nav {
     position: fixed;
     inset: var(--header-height) 0 0 0;
-    background: var(--charcoal);
+    background: #fff;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
