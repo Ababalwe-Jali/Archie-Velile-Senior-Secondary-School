@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resource Centre | Archie Velile Senior Secondary School</title>
-<meta name="description" content="Download timetables, policies, forms, circulars and newsletters from the Archie Velile Senior Secondary School Resource Centre.">
+<meta name="description" content="The official digital resource library of Archie Velile Senior Secondary School — admissions forms, academic resources, school documents, policies, and publications, all in one place.">
 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../CSS/style.css">
+
 </head>
 <body data-page="resources">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -18,7 +19,7 @@
       <span>2643 Thembisa, King William's Town, Eastern Cape · (040) 307 0825</span>
     </div>
     <div class="utility-links">
-      <a href="resources.html">Resource Centre</a>
+      <a href="resources.html" aria-current="page">Resource Centre</a>
       <a href="vacancies.html">Careers@Archie</a>
       <a href="alumni.html">Alumni</a>
     </div>
@@ -39,14 +40,14 @@
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Primary">
       <a href="../index.html" data-nav="home">Home</a>
-      <a href="../HTML/about.html" data-nav="about">About</a>
-      <a href="../HTML/academics.html" data-nav="academics">Academics</a>
-      <a href="../HTML/admissions.html" data-nav="admissions">Admissions</a>
-      <a href="../HTML/student-life.html" data-nav="student-life">Life @ Archie</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="academics.html" data-nav="academics">Academics</a>
+      <a href="admission.html" data-nav="admissions">Admissions</a>
+      <a href="student-life.html" data-nav="student-life">Life @ Archie</a>
       <a href="alumni.html" data-nav="alumni">Alumni</a>
-      <a href="../HTML/news.html" data-nav="news">News</a>
-      <a href="../HTML/calendar.html" data-nav="calendar">Calendar</a>
-      <a href="../HTML/contact.html" data-nav="contact">Contact</a>
+      <a href="news.html" data-nav="news">News</a>
+      <a href="calendar.html" data-nav="calendar">Calendar</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
       <a href="./online-application.html" class="btn btn-primary nav-apply">Apply</a>
     </nav>
     <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
@@ -57,95 +58,489 @@
 
 <main id="main">
 
-  <section class="page-hero">
-    <div class="page-hero-triangle" aria-hidden="true"></div>
+  <!-- ============ HERO ============ -->
+  <section class="hero-premium">
+    <div class="hero-premium-media reveal-scale">
+      <img src="../img/Institution.jpg" alt="The library and administration building at Archie Velile Senior Secondary School" loading="eager">
+    </div>
+    <div class="hero-premium-overlay" aria-hidden="true"></div>
+
     <div class="container">
-      <p class="breadcrumb"><a href="index.html">Home</a> / Resource Centre</p>
-      <span class="eyebrow">Resource Centre</span>
-      <h1>Downloads &amp; Documents</h1>
-      <p class="lede" style="color: var(--gray-pale);">Timetables, forms, policies, circulars, newsletters and annual reports — all in one place.</p>
+      <div class="hero-premium-content stagger">
+        <span class="hero-premium-eyebrow reveal" style="--i:0;">Resource Centre</span>
+        <h1 class="hero-premium-headline reveal" style="--i:1;">Everything You Need, <br>All in One Place</h1>
+        <p class="hero-premium-lede reveal" style="--i:2;">Official school documents, academic resources, policies, forms, newsletters, calendars, examination information, and important publications — organised to help learners, parents, educators, and the wider school community find what they need, when they need it.</p>
+
+        <div class="hero-premium-actions reveal" style="--i:3;">
+          <a href="#resource-library" class="btn btn-discover">Browse Resources</a>
+          <a href="#featured-resources" class="btn btn-secondary">View Featured Documents</a>
+        </div>
+
+        <div class="hero-premium-highlights stagger">
+          <span class="hero-highlight-chip reveal" style="--i:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12l5 5L20 6"/></svg>
+            Supporting Learning
+          </span>
+          <span class="hero-highlight-chip reveal" style="--i:1;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12l5 5L20 6"/></svg>
+            Strengthening Communication
+          </span>
+          <span class="hero-highlight-chip reveal" style="--i:2;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg>
+            6 Resource Categories
+          </span>
+          <span class="hero-highlight-chip reveal" style="--i:3;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z"/></svg>
+            Verified &amp; Up to Date
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="hero-scroll-mouse"></span>
     </div>
   </section>
 
-  <section>
+  <!-- ============ FEATURED RESOURCES ============ -->
+  <section class="section-soft" id="featured-resources">
     <div class="container">
-
-      <div class="filter-bar" role="group" aria-label="Filter resources by category">
-        <button class="filter-tab" data-filter="all" aria-pressed="true">All</button>
-        <button class="filter-tab" data-filter="timetables" aria-pressed="false">Timetables</button>
-        <button class="filter-tab" data-filter="forms" aria-pressed="false">Forms</button>
-        <button class="filter-tab" data-filter="policies" aria-pressed="false">Policies</button>
-        <button class="filter-tab" data-filter="circulars" aria-pressed="false">Circulars</button>
-        <button class="filter-tab" data-filter="newsletters" aria-pressed="false">Newsletters</button>
-        <button class="filter-tab" data-filter="reports" aria-pressed="false">Annual Reports</button>
+      <div class="section-head">
+        <span class="eyebrow">Featured</span>
+        <h2>Featured Resources</h2>
+        <p class="lede">The documents families and learners reach for most, kept front and centre.</p>
+        <div class="resource-tags">
+          <span class="badge badge-subtle">Most Requested</span>
+          <span class="badge badge-subtle">Recently Updated</span>
+        </div>
       </div>
 
-      <div class="grid grid-3 stagger">
-
-        <div class="card reveal" data-resource-category="timetables">
-          <div class="card-body flex items-center gap-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-primary)" stroke-width="1.5"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            <div><h5>Class Timetable — 2026</h5><p class="caption">PDF · Updated Jul 2026</p></div>
+      <div class="doc-grid stagger">
+        <article class="doc-card reveal" data-doc-card data-title="2027 academic prospectus" data-category="school-documents" data-type="pdf" style="--i:0;">
+          <div class="doc-card-top">
+            <div class="doc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <h5>2027 Academic Prospectus</h5>
           </div>
-        </div>
-
-        <div class="card reveal" data-resource-category="timetables">
-          <div class="card-body flex items-center gap-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-primary)" stroke-width="1.5"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            <div><h5>Examination Timetable — Term 3</h5><p class="caption">PDF · Updated Jul 2026</p></div>
+          <p class="doc-desc">A complete overview of our academic programmes, facilities, values, and admission requirements for the 2027 intake.</p>
+          <div class="doc-meta">
+            <span>PDF</span><span class="doc-meta-dot"></span><span>3.6 MB</span><span class="doc-meta-dot"></span><span>Published Jul 2026</span><span class="doc-meta-dot"></span><span>Updated Jul 2026</span>
           </div>
-        </div>
-
-        <div class="card reveal" data-resource-category="forms">
-          <div class="card-body flex items-center gap-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-primary)" stroke-width="1.5"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            <div><h5>2027 Admission Application Form</h5><p class="caption">PDF · Updated Jul 2026</p></div>
+          <div class="doc-actions">
+            <a href="../documents/2027%20Academic%20Prospectus.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view" aria-label="View 2027 Academic Prospectus PDF in a new browser tab">View Document</a>
+            <a href="../documents/2027%20Academic%20Prospectus.pdf" download class="btn btn-download" aria-label="Download 2027 Academic Prospectus PDF">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              Download
+            </a>
           </div>
-        </div>
+        </article>
 
-        <div class="card reveal" data-resource-category="policies">
-          <div class="card-body flex items-center gap-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-primary)" stroke-width="1.5"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            <div><h5>School Uniform Policy</h5><p class="caption">PDF · Updated Jan 2026</p></div>
+        <article class="doc-card reveal" data-doc-card data-title="2027 school calendar" data-category="school-documents" data-type="pdf" style="--i:1;">
+          <div class="doc-card-top">
+            <div class="doc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v4M16 2v4M4 9h16"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
+            </div>
+            <h5>2027 School Calendar</h5>
           </div>
-        </div>
-
-        <div class="card reveal" data-resource-category="policies">
-          <div class="card-body flex items-center gap-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-primary)" stroke-width="1.5"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            <div><h5>Code of Conduct</h5><p class="caption">PDF · Updated Jan 2026</p></div>
+          <p class="doc-desc">Term dates, examination periods, public holidays, and key school events for the 2027 academic year.</p>
+          <div class="doc-meta">
+            <span>PDF</span><span class="doc-meta-dot"></span><span>1.4 MB</span><span class="doc-meta-dot"></span><span>Published Jul 2026</span><span class="doc-meta-dot"></span><span>Updated Jul 2026</span>
           </div>
-        </div>
-
-        <div class="card reveal" data-resource-category="circulars">
-          <div class="card-body flex items-center gap-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-primary)" stroke-width="1.5"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            <div><h5>Term 3 Circular — Parent Meetings</h5><p class="caption">PDF · Jul 2026</p></div>
+          <div class="doc-actions">
+            <a href="../documents/2027%20School%20Calendar.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view" aria-label="View 2027 School Calendar PDF in a new browser tab">View Document</a>
+            <a href="../documents/2027%20School%20Calendar.pdf" download class="btn btn-download" aria-label="Download 2027 School Calendar PDF">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              Download
+            </a>
           </div>
-        </div>
+        </article>
 
-        <div class="card reveal" data-resource-category="newsletters">
-          <div class="card-body flex items-center gap-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-primary)" stroke-width="1.5"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            <div><h5>Term 2 Newsletter</h5><p class="caption">PDF · Jun 2026</p></div>
+        <article class="doc-card reveal" data-doc-card data-title="grade timetables" data-category="academic-resources" data-type="pdf" style="--i:2;">
+          <div class="doc-card-top">
+            <div class="doc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v4M16 2v4M4 9h16"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 13h3M8 17h6"/></svg>
+            </div>
+            <h5>Grade Timetables</h5>
           </div>
-        </div>
-
-        <div class="card reveal" data-resource-category="reports">
-          <div class="card-body flex items-center gap-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-primary)" stroke-width="1.5"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            <div><h5>2025 School Annual Report</h5><p class="caption">PDF · Mar 2026</p></div>
+          <p class="doc-desc">Weekly class timetables for Grades 8 to 12, organised by grade and subject stream.</p>
+          <div class="doc-meta">
+            <span>PDF</span><span class="doc-meta-dot"></span><span>540 KB</span><span class="doc-meta-dot"></span><span>Published Jan 2026</span><span class="doc-meta-dot"></span><span>Updated Jul 2026</span>
           </div>
-        </div>
-
-        <div class="card reveal" data-resource-category="forms">
-          <div class="card-body flex items-center gap-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-primary)" stroke-width="1.5"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-            <div><h5>Indemnity &amp; Consent Form</h5><p class="caption">PDF · Updated Feb 2026</p></div>
+          <div class="doc-actions">
+            <a href="../documents/Grade%20Timetables.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view" aria-label="View Grade Timetables PDF in a new browser tab">View Document</a>
+            <a href="../documents/Grade%20Timetables.pdf" download class="btn btn-download" aria-label="Download Grade Timetables PDF">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              Download
+            </a>
           </div>
-        </div>
+        </article>
 
+        <article class="doc-card reveal" data-doc-card data-title="admissions guide" data-category="admissions" data-type="pdf" style="--i:3;">
+          <div class="doc-card-top">
+            <div class="doc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9V2h9l3 3v4"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+            </div>
+            <h5>Admissions Guide</h5>
+          </div>
+          <p class="doc-desc">A step-by-step guide to applying for Grade 8 and Grade 10 admission, both online and manually.</p>
+          <div class="doc-meta">
+            <span>PDF</span><span class="doc-meta-dot"></span><span>780 KB</span><span class="doc-meta-dot"></span><span>Published Feb 2026</span><span class="doc-meta-dot"></span><span>Updated Jun 2026</span>
+          </div>
+          <div class="doc-actions">
+            <a href="../documents/Admissions%20Guide.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view" aria-label="View Admissions Guide PDF in a new browser tab">View Document</a>
+            <a href="../documents/Admissions%20Guide.pdf" download class="btn btn-download" aria-label="Download Admissions Guide PDF">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              Download
+            </a>
+          </div>
+        </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ SEARCH & FILTER + LIBRARY ============ -->
+  <section id="resource-library">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The Full Library</span>
+        <h2>Browse the Resource Library</h2>
+        <p class="lede">Search by name, or filter by category to find exactly what you need.</p>
+      </div>
+
+      <div class="resource-toolbar reveal">
+        <label class="resource-search" for="resource-search-input">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="search" id="resource-search-input" placeholder="Search documents by title or keyword…" aria-label="Search resources by title or keyword">
+        </label>
+        <div class="resource-filter-group" role="group" aria-label="Filter resources by category">
+          <button type="button" class="resource-filter-chip is-active" data-filter="all">All Categories</button>
+          <button type="button" class="resource-filter-chip" data-filter="admissions">Admissions</button>
+          <button type="button" class="resource-filter-chip" data-filter="academic-resources">Academic Resources</button>
+          <button type="button" class="resource-filter-chip" data-filter="school-documents">School Documents</button>
+          <button type="button" class="resource-filter-chip" data-filter="parent-information">Parent Information</button>
+          <button type="button" class="resource-filter-chip" data-filter="learner-resources">Learner Resources</button>
+          <button type="button" class="resource-filter-chip" data-filter="reports-governance">Reports &amp; Governance</button>
+        </div>
+      </div>
+
+      <!-- ADMISSIONS -->
+      <div class="resource-category-anchor" id="admissions">
+        <span class="eyebrow" style="display:block; margin-bottom: 12px;">Admissions</span>
+        <div class="doc-grid stagger" style="margin-bottom: var(--space-3xl);" id="grid-admissions">
+          <article class="doc-card reveal" data-doc-card data-title="admission application form" data-category="admissions" data-type="pdf" style="--i:0;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9V2h9l3 3v4"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg></div>
+              <h5>Admission Application Form</h5>
+            </div>
+            <p class="doc-desc">The official manual application form for Grade 8 and Grade 10 admission, for completion by hand.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>420 KB</span><span class="doc-meta-dot"></span><span>Published Jan 2026</span><span class="doc-meta-dot"></span><span>Updated Jun 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Admission%20Application%20Form.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Admission%20Application%20Form.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="required supporting documents checklist" data-category="admissions" data-type="pdf" style="--i:1;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12l5 5L20 6"/></svg></div>
+              <h5>Required Supporting Documents</h5>
+            </div>
+            <p class="doc-desc">A checklist of the identity documents, report cards, and proof of residence needed to complete an application.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>210 KB</span><span class="doc-meta-dot"></span><span>Published Jan 2026</span><span class="doc-meta-dot"></span><span>Updated Jan 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Required%20Supporting%20Documents.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Required%20Supporting%20Documents.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="online application guide" data-category="admissions" data-type="pdf" style="--i:2;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
+              <h5>Online Application Guide</h5>
+            </div>
+            <p class="doc-desc">A short walkthrough of the online application process, including document upload and tracking your reference number.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>340 KB</span><span class="doc-meta-dot"></span><span>Published Feb 2026</span><span class="doc-meta-dot"></span><span>Updated Feb 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Online%20Application%20Guide.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Online%20Application%20Guide.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- ACADEMIC RESOURCES -->
+      <div class="resource-category-anchor" id="academic-resources">
+        <span class="eyebrow" style="display:block; margin-bottom: 12px;">Academic Resources</span>
+        <div class="doc-grid stagger" style="margin-bottom: var(--space-3xl);" id="grid-academic-resources">
+          <article class="doc-card reveal" data-doc-card data-title="learner timetables" data-category="academic-resources" data-type="pdf" style="--i:0;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v4M16 2v4M4 9h16"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg></div>
+              <h5>Learner Timetables</h5>
+            </div>
+            <p class="doc-desc">Individual class timetables covering all subjects offered per grade and stream for Term 3.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>510 KB</span><span class="doc-meta-dot"></span><span>Published Jan 2026</span><span class="doc-meta-dot"></span><span>Updated Jul 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Learner%20Timetables.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Learner%20Timetables.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="examination timetable" data-category="academic-resources" data-type="pdf" style="--i:1;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v4M16 2v4M4 9h16"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 13h3M8 17h6"/></svg></div>
+              <h5>Examination Timetable</h5>
+            </div>
+            <p class="doc-desc">Sitting dates, times, and venues for upcoming term and final examinations, by grade.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>310 KB</span><span class="doc-meta-dot"></span><span>Published Apr 2026</span><span class="doc-meta-dot"></span><span>Updated Jun 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Examination%20Timetable.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Examination%20Timetable.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="subject information booklet" data-category="academic-resources" data-type="pdf" style="--i:2;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+              <h5>Subject Information Booklet</h5>
+            </div>
+            <p class="doc-desc">An overview of every subject offered across our four faculties, including entry requirements and career pathways.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>1.1 MB</span><span class="doc-meta-dot"></span><span>Published Feb 2026</span><span class="doc-meta-dot"></span><span>Updated Feb 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Subject%20Information%20Booklet.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Subject%20Information%20Booklet.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="assessment guidelines" data-category="academic-resources" data-type="pdf" style="--i:3;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6M9 16h6M9 8h1"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+              <h5>Assessment Guidelines</h5>
+            </div>
+            <p class="doc-desc">How formal and informal assessment is structured across the year, and what is expected of each grade.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>460 KB</span><span class="doc-meta-dot"></span><span>Published Jan 2026</span><span class="doc-meta-dot"></span><span>Updated Jan 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Assessment%20Guidelines.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Assessment%20Guidelines.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- SCHOOL DOCUMENTS -->
+      <div class="resource-category-anchor" id="school-documents">
+        <span class="eyebrow" style="display:block; margin-bottom: 12px;">School Documents</span>
+        <div class="doc-grid stagger" style="margin-bottom: var(--space-3xl);" id="grid-school-documents">
+          <article class="doc-card reveal" data-doc-card data-title="school calendar" data-category="school-documents" data-type="pdf" style="--i:0;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v4M16 2v4M4 9h16"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg></div>
+              <h5>School Calendar</h5>
+            </div>
+            <p class="doc-desc">Term dates, examination periods, and school events for the 2026 academic year.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>1.2 MB</span><span class="doc-meta-dot"></span><span>Published Jan 2026</span><span class="doc-meta-dot"></span><span>Updated Jan 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/School%20Calendar.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/School%20Calendar.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="school fees information" data-category="school-documents" data-type="pdf" style="--i:1;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2.5 0 0 1 2.5-1h.5a2 2 0 1 1 0 4h-1a2 2 0 1 0 0 4h.5a2.5 2.5 0 0 0 2.5-1"/></svg></div>
+              <h5>School Fees Information</h5>
+            </div>
+            <p class="doc-desc">Fee structure, payment options, and information on the fee exemption application process.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>290 KB</span><span class="doc-meta-dot"></span><span>Published Jan 2026</span><span class="doc-meta-dot"></span><span>Updated Jan 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/School%20Fees%20Information.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/School%20Fees%20Information.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="uniform requirements" data-category="school-documents" data-type="pdf" style="--i:2;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.4 14.5 16 10 4 20"/><circle cx="16" cy="8" r="1.5"/><path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></div>
+              <h5>Uniform Requirements</h5>
+            </div>
+            <p class="doc-desc">A full guide to correct uniform and grooming standards for boys and girls, by grade.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>680 KB</span><span class="doc-meta-dot"></span><span>Published 2025</span><span class="doc-meta-dot"></span><span>Updated 2025</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Uniform%20Requirements.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Uniform%20Requirements.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="code of conduct" data-category="school-documents" data-type="pdf" style="--i:3;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12l5 5L20 6"/></svg></div>
+              <h5>Code of Conduct</h5>
+            </div>
+            <p class="doc-desc">The learner code of conduct governing behaviour, discipline procedures, and expectations of every learner.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>560 KB</span><span class="doc-meta-dot"></span><span>Published 2025</span><span class="doc-meta-dot"></span><span>Updated 2025</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Code%20of%20Conduct.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Code%20of%20Conduct.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="school policies" data-category="school-documents" data-type="pdf" style="--i:4;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6M9 16h6M9 8h1"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+              <h5>School Policies</h5>
+            </div>
+            <p class="doc-desc">Our consolidated admission policy, safety policy, and other governance documents in one bundle.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>2.1 MB</span><span class="doc-meta-dot"></span><span>Published 2025</span><span class="doc-meta-dot"></span><span>Updated 2025</span></div>
+            <div class="doc-actions">
+              <a href="../documents/School%20Policies.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/School%20Policies.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- PARENT INFORMATION -->
+      <div class="resource-category-anchor" id="parent-information">
+        <span class="eyebrow" style="display:block; margin-bottom: 12px;">Parent Information</span>
+        <div class="doc-grid stagger" style="margin-bottom: var(--space-3xl);" id="grid-parent-information">
+          <article class="doc-card reveal" data-doc-card data-title="term 3 parent circular" data-category="parent-information" data-type="pdf" style="--i:0;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v12H8l-4 4V4z"/></svg></div>
+              <h5>Term 3 Parent Circular</h5>
+            </div>
+            <p class="doc-desc">Key dates, reminders, and announcements for parents and guardians ahead of Term 3.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>180 KB</span><span class="doc-meta-dot"></span><span>Published Jul 2026</span><span class="doc-meta-dot"></span><span>Updated Jul 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Term%203%20Parent%20Circular.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Term%203%20Parent%20Circular.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="parent newsletter" data-category="parent-information" data-type="pdf" style="--i:1;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+              <h5>Parent Newsletter — Term 3</h5>
+            </div>
+            <p class="doc-desc">A round-up of achievements, upcoming events, and school life for the current term.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>2.3 MB</span><span class="doc-meta-dot"></span><span>Published Jul 2026</span><span class="doc-meta-dot"></span><span>Updated Jul 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Parent%20Newsletter%20Term%203.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Parent%20Newsletter%20Term%203.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="parent meeting notice" data-category="parent-information" data-type="pdf" style="--i:2;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="18" cy="8" r="2"/></svg></div>
+              <h5>Parent Meeting Notice</h5>
+            </div>
+            <p class="doc-desc">Formal notice and agenda for the upcoming Grade 9 &amp; 11 parent meeting.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>140 KB</span><span class="doc-meta-dot"></span><span>Published Jul 2026</span><span class="doc-meta-dot"></span><span>Updated Jul 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Parent%20Meeting%20Notice.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Parent%20Meeting%20Notice.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="consent form" data-category="parent-information" data-type="docx" style="--i:3;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12l5 5L20 6"/></svg></div>
+              <h5>General Consent Form</h5>
+            </div>
+            <p class="doc-desc">The standard consent form required for school outings, photography, and extramural participation.</p>
+            <div class="doc-meta"><span>DOCX</span><span class="doc-meta-dot"></span><span>95 KB</span><span class="doc-meta-dot"></span><span>Published Jan 2026</span><span class="doc-meta-dot"></span><span>Updated Jan 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/General%20Consent%20Form.docx" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/General%20Consent%20Form.docx" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- LEARNER RESOURCES -->
+      <div class="resource-category-anchor" id="learner-resources">
+        <span class="eyebrow" style="display:block; margin-bottom: 12px;">Learner Resources</span>
+        <div class="doc-grid stagger" style="margin-bottom: var(--space-3xl);" id="grid-learner-resources">
+          <article class="doc-card reveal" data-doc-card data-title="mathematics study guide" data-category="learner-resources" data-type="pdf" style="--i:0;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+              <h5>Grade 12 Mathematics Study Guide</h5>
+            </div>
+            <p class="doc-desc">A condensed revision guide covering the core Mathematics topics assessed in the NSC examination.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>4.2 MB</span><span class="doc-meta-dot"></span><span>Published Mar 2026</span><span class="doc-meta-dot"></span><span>Updated Jun 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Grade%2012%20Mathematics%20Study%20Guide.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Grade%2012%20Mathematics%20Study%20Guide.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="homework support timetable" data-category="learner-resources" data-type="pdf" style="--i:1;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v4M16 2v4M4 9h16"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg></div>
+              <h5>Homework Support Timetable</h5>
+            </div>
+            <p class="doc-desc">Days and venues for after-school homework support sessions, by subject and grade.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>150 KB</span><span class="doc-meta-dot"></span><span>Published Jan 2026</span><span class="doc-meta-dot"></span><span>Updated Apr 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Homework%20Support%20Timetable.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Homework%20Support%20Timetable.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <article class="doc-card reveal" data-doc-card data-title="career guidance handbook" data-category="learner-resources" data-type="pdf" style="--i:2;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z"/></svg></div>
+              <h5>Career Guidance Handbook</h5>
+            </div>
+            <p class="doc-desc">Guidance on subject choices, tertiary study options, bursaries, and career pathways for Grade 9 to 12 learners.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>1.8 MB</span><span class="doc-meta-dot"></span><span>Published Feb 2026</span><span class="doc-meta-dot"></span><span>Updated Feb 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/Career%20Guidance%20Handbook.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/Career%20Guidance%20Handbook.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- REPORTS & GOVERNANCE -->
+      <div class="resource-category-anchor" id="reports-governance">
+        <span class="eyebrow" style="display:block; margin-bottom: 12px;">Reports &amp; Governance</span>
+        <div class="doc-grid stagger" style="margin-bottom: var(--space-3xl);" id="grid-reports-governance">
+          <article class="doc-card reveal" data-doc-card data-title="school improvement plan" data-category="reports-governance" data-type="pdf" style="--i:0;">
+            <div class="doc-card-top">
+              <div class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+              <h5>School Improvement Plan</h5>
+            </div>
+            <p class="doc-desc">Our current strategic priorities and improvement targets, reviewed annually by the School Governing Body.</p>
+            <div class="doc-meta"><span>PDF</span><span class="doc-meta-dot"></span><span>1.5 MB</span><span class="doc-meta-dot"></span><span>Published Jan 2026</span><span class="doc-meta-dot"></span><span>Updated Jan 2026</span></div>
+            <div class="doc-actions">
+              <a href="../documents/School%20Improvement%20Plan.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-view">View Document</a>
+              <a href="../documents/School%20Improvement%20Plan.pdf" download class="btn btn-download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Download</a>
+            </div>
+          </article>
+
+          <!-- Empty state example: no annual report published yet for the new cycle -->
+          <div class="resource-empty" data-doc-card data-title="annual reports" data-category="reports-governance" data-type="">
+            <div class="resource-empty-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <h5>No Resources Available</h5>
+            <p>Annual Reports and SGB Documents for this cycle will be published here as they become available.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- No-results empty state (shown by search/filter script when nothing matches) -->
+      <div class="doc-grid" id="grid-no-results" style="display:none;">
+        <div class="resource-empty">
+          <div class="resource-empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <h5>No Resources Available</h5>
+          <p>We couldn't find a document matching your search. Try a different term, or browse by category above.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -163,7 +558,7 @@
         <ul>
           <li><a href="./about.html">About</a></li>
           <li><a href="./academics.html">Academics</a></li>
-          <li><a href="./admissions.html">Admissions</a></li>
+          <li><a href="./admission.html">Admissions</a></li>
           <li><a href="./student-life.html">Student Life</a></li>
           <li><a href="./alumni.html">Alumni</a></li>
         </ul>
@@ -195,5 +590,62 @@
 </footer>
 
 <script src="../JavaScript/script.js"></script>
+<script>
+  (function () {
+    var searchInput = document.getElementById('resource-search-input');
+    var filterChips = document.querySelectorAll('.resource-filter-chip');
+    var cards = document.querySelectorAll('[data-doc-card]');
+    var categorySections = document.querySelectorAll('.resource-category-anchor');
+    var noResults = document.getElementById('grid-no-results');
+    var activeCategory = 'all';
+
+    function applyFilters() {
+      var term = (searchInput.value || '').trim().toLowerCase();
+      var visibleCount = 0;
+
+      cards.forEach(function (card) {
+        var title = (card.getAttribute('data-title') || '').toLowerCase();
+        var category = card.getAttribute('data-category') || '';
+        var matchesCategory = activeCategory === 'all' || category === activeCategory;
+        var matchesSearch = term === '' || title.indexOf(term) !== -1;
+        var visible = matchesCategory && matchesSearch;
+
+        card.classList.toggle('is-hidden', !visible);
+        if (visible) visibleCount++;
+      });
+
+      categorySections.forEach(function (section) {
+        var sectionCategory = section.id;
+        var anyVisible = section.querySelector('[data-doc-card]:not(.is-hidden)');
+        var categoryMatches = activeCategory === 'all' || activeCategory === sectionCategory;
+        section.style.display = (categoryMatches && (term === '' || anyVisible)) ? '' : 'none';
+      });
+
+      noResults.style.display = visibleCount === 0 ? '' : 'none';
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilters);
+    }
+
+    filterChips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        filterChips.forEach(function (c) { c.classList.remove('is-active'); });
+        chip.classList.add('is-active');
+        activeCategory = chip.getAttribute('data-filter');
+
+        if (activeCategory !== 'all') {
+          var target = document.getElementById(activeCategory);
+          if (target) {
+            setTimeout(function () {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+          }
+        }
+        applyFilters();
+      });
+    });
+  })();
+</script>
 </body>
 </html>
