@@ -752,3 +752,4 @@ function initAdmissionsApplication() {
 
   observer.observe(mainNav, { attributes: true, attributeFilter: ['class'] });
 })();
+
