@@ -242,11 +242,19 @@ section { padding-block: var(--space-6xl); }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(15px);
+  /* background + backdrop-filter removed from here */
   box-shadow: 0 2px 4px rgba(7, 37, 68, 0.1);
   transition: 0.3s ease;
   animation: 0.95s ease 0s normal forwards 1 running headerSlideDown;
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
 }
 
 .site-header .container {
@@ -344,6 +352,12 @@ section { padding-block: var(--space-6xl); }
 .nav-toggle[aria-expanded="true"] .bar { background: transparent; }
 .nav-toggle[aria-expanded="true"] .bar::before { transform: translateY(7px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] .bar::after { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+  body:has(.main-nav.is-open) {
+    overflow: hidden;
+  }
+}
 
 /* ==========================================================================
    MOBILE NAVIGATION — HAMBURGER ALIGNMENT & COLOUR FIX
