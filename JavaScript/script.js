@@ -24,14 +24,12 @@ function initMobileNav() {
     var isOpen = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!isOpen));
     nav.classList.toggle('is-open', !isOpen);
-    document.body.style.overflow = !isOpen ? 'hidden' : '';
   });
 
   nav.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
       toggle.setAttribute('aria-expanded', 'false');
       nav.classList.remove('is-open');
-      document.body.style.overflow = '';
     });
   });
 
@@ -39,7 +37,6 @@ function initMobileNav() {
     if (e.key === 'Escape' && nav.classList.contains('is-open')) {
       toggle.setAttribute('aria-expanded', 'false');
       nav.classList.remove('is-open');
-      document.body.style.overflow = '';
       toggle.focus();
     }
   });
@@ -746,15 +743,9 @@ function initAdmissionsApplication() {
     var isOpen = mainNav.classList.contains('is-open');
     if (isOpen) {
       savedScrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = '-' + savedScrollY + 'px';
-      document.body.style.left = '0';
-      document.body.style.right = '0';
-    } else if (document.body.style.position === 'fixed') {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
+      document.documentElement.style.overflow = 'hidden';
+    } else if (document.documentElement.style.overflow === 'hidden') {
+      document.documentElement.style.overflow = '';
       window.scrollTo(0, savedScrollY);
     }
   });
