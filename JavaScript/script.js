@@ -736,3 +736,28 @@ function initAdmissionsApplication() {
       });
     });
   })();
+
+  (function () {
+  var mainNav = document.querySelector('.main-nav');
+  if (!mainNav) return;
+  var savedScrollY = 0;
+
+  var observer = new MutationObserver(function () {
+    var isOpen = mainNav.classList.contains('is-open');
+    if (isOpen) {
+      savedScrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + savedScrollY + 'px';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+    } else if (document.body.style.position === 'fixed') {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      window.scrollTo(0, savedScrollY);
+    }
+  });
+
+  observer.observe(mainNav, { attributes: true, attributeFilter: ['class'] });
+})();

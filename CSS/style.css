@@ -353,11 +353,6 @@ section { padding-block: var(--space-6xl); }
 .nav-toggle[aria-expanded="true"] .bar::before { transform: translateY(7px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] .bar::after { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 900px) {
-  body:has(.main-nav.is-open) {
-    overflow: clip;
-  }
-}
 
 /* ==========================================================================
    MOBILE NAVIGATION — HAMBURGER ALIGNMENT & COLOUR FIX
