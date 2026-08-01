@@ -355,7 +355,7 @@ section { padding-block: var(--space-6xl); }
 
 @media (max-width: 900px) {
   body:has(.main-nav.is-open) {
-    overflow: hidden;
+    overflow: clip;
   }
 }
 
