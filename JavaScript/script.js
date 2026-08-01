@@ -644,3 +644,95 @@ function initAdmissionsApplication() {
   tick();
   const timerId = setInterval(tick, 1000);
 })();
+
+
+  (function () {
+    // ---------- Vacancy detail expand/collapse ----------
+    document.querySelectorAll('.vacancy-toggle-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = btn.closest('.vacancy-card');
+        var detail = card.querySelector('.vacancy-detail');
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        detail.classList.toggle('is-open', !expanded);
+        btn.childNodes[0].textContent = !expanded ? 'Hide Job Description ' : 'Read Full Job Description ';
+      });
+    });
+
+    // ---------- Copy Link ----------
+    document.querySelectorAll('.vacancy-copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = btn.closest('.vacancy-card');
+        var url = window.location.origin + window.location.pathname + '#' + card.id;
+        var finish = function () {
+          btn.classList.add('is-copied');
+          setTimeout(function () { btn.classList.remove('is-copied'); }, 2200);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(finish).catch(function () {
+            fallbackCopy(url);
+            finish();
+          });
+        } else {
+          fallbackCopy(url);
+          finish();
+        }
+      });
+    });
+
+    function fallbackCopy(text) {
+      var temp = document.createElement('textarea');
+      temp.value = text;
+      temp.style.position = 'fixed';
+      temp.style.opacity = '0';
+      document.body.appendChild(temp);
+      temp.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(temp);
+    }
+
+    // ---------- Search & filter ----------
+    var searchInput = document.getElementById('vacancy-search-input');
+    var deptFilter = document.getElementById('vacancy-filter-department');
+    var typeFilter = document.getElementById('vacancy-filter-type');
+    var statusFilter = document.getElementById('vacancy-filter-status');
+    var countEl = document.getElementById('vacancy-count');
+    var emptyState = document.getElementById('vacancies-empty');
+    var cards = document.querySelectorAll('.vacancy-card');
+
+    function applyVacancyFilters() {
+      var term = (searchInput.value || '').trim().toLowerCase();
+      var dept = deptFilter.value;
+      var type = typeFilter.value;
+      var status = statusFilter.value;
+      var visible = 0;
+
+      cards.forEach(function (card) {
+        var title = card.getAttribute('data-title') || '';
+        var matches = (dept === 'all' || card.getAttribute('data-department') === dept) &&
+                      (type === 'all' || card.getAttribute('data-type') === type) &&
+                      (status === 'all' || card.getAttribute('data-status') === status) &&
+                      (term === '' || title.indexOf(term) !== -1);
+        card.setAttribute('data-hidden', matches ? 'false' : 'true');
+        if (matches) visible++;
+      });
+
+      countEl.textContent = visible + (visible === 1 ? ' vacancy' : ' vacancies');
+      emptyState.hidden = visible !== 0;
+    }
+
+    [searchInput, deptFilter, typeFilter, statusFilter].forEach(function (el) {
+      el.addEventListener('input', applyVacancyFilters);
+      el.addEventListener('change', applyVacancyFilters);
+    });
+
+    // ---------- FAQ accordion ----------
+    document.querySelectorAll('.faq-question').forEach(function (q) {
+      q.addEventListener('click', function () {
+        var answer = q.nextElementSibling;
+        var expanded = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', String(!expanded));
+        answer.classList.toggle('is-open', !expanded);
+      });
+    });
+  })();

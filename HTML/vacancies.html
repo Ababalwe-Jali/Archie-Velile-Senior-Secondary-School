@@ -4,9 +4,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vacancies | Archie Velile Senior Secondary School</title>
-<meta name="description" content="Current employment opportunities at Archie Velile Senior Secondary School.">
+<meta name="description" content="Current employment opportunities, recruitment process, and how to apply at Archie Velile Senior Secondary School.">
 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../CSS/style.css">
+
+<!-- Minimal, scoped additions for the FAQ accordion and vacancy detail expand/collapse animation.
+     Reuses the site's existing colour, radius, shadow and spacing tokens rather than
+     introducing a new visual language — no accordion component exists elsewhere on the site. -->
+<style>
+  .vacancy-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .vacancy-detail.is-open { max-height: 2000px; }
+  .vacancy-toggle-btn svg { transition: transform 0.25s ease; }
+  .vacancy-toggle-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .vacancy-copy-toast { opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+  .vacancy-copy-btn.is-copied .vacancy-copy-toast { opacity: 1; }
+  .vacancy-card[data-hidden="true"] { display: none; }
+
+  .faq-accordion { display: flex; flex-direction: column; gap: 14px; max-width: 860px; margin: 0 auto; }
+  .faq-item {
+    background: #fff;
+    border: 1px solid var(--gray-pale, #e2e5ea);
+    border-radius: var(--radius-lg, 16px);
+    box-shadow: var(--shadow-sm, 0 4px 14px rgba(15,23,42,0.05));
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 20px 24px;
+    font-family: inherit;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--navy-institutional, #1a2540);
+    text-align: left;
+  }
+  .faq-question svg { flex-shrink: 0; transition: transform 0.25s ease; color: var(--slate, #64748b); }
+  .faq-question[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .faq-answer.is-open { max-height: 400px; }
+  .faq-answer p { padding: 0 24px 22px; color: var(--slate, #64748b); }
+
+  .vacancy-featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gold, #c9a227);
+    color: #1a2540;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+</style>
 </head>
 <body data-page="vacancies">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -19,7 +81,7 @@
     </div>
     <div class="utility-links">
       <a href="resources.html">Resource Centre</a>
-      <a href="vacancies.html">Careers@Archie</a>
+      <a href="vacancies.html" aria-current="page">Careers@Archie</a>
       <a href="alumni.html">Alumni</a>
     </div>
   </div>
@@ -57,13 +119,73 @@
 
 <main id="main">
 
+  <!-- ============ HERO ============ -->
   <section class="page-hero">
     <div class="page-hero-triangle" aria-hidden="true"></div>
     <div class="container">
-      <p class="breadcrumb"><a href="index.html">Home</a> / Vacancies</p>
+      <p class="breadcrumb"><a href="../index.html">Home</a> / Vacancies</p>
       <span class="eyebrow">Employment Opportunities</span>
-      <h1>Vacancies</h1>
-      <p class="lede" style="color: var(--gray-pale);">Current employment opportunities at Archie Velile Senior Secondary School.</p>
+      <h1 style="color: #fff;">Build Your Career at Archie Velile</h1>
+      <p class="lede" style="color: var(--gray-pale); margin-top: 20px;">Archie Velile Senior Secondary School welcomes skilled, committed professionals who share our dedication to quality public education. Every vacancy is advertised and filled through a transparent, fair, and professional recruitment process, in line with Department of Basic Education requirements.</p>
+    </div>
+  </section>
+
+  <!-- RECRUITMENT PRINCIPLES -->
+  <section class="standards-section">
+    <div class="container">
+      <div class="standards-grid">
+        <div class="standards-intro reveal">
+          <span class="eyebrow">Our Recruitment Principles</span>
+          <h2>A Fair, Transparent Process — Every Time</h2>
+          <p class="standards-copy" style="margin-bottom: 30px;">We hold every recruitment process to the same standard of fairness and transparency that governs our classrooms. Applicants can trust that every vacancy at Archie Velile Senior Secondary School is filled on merit, in line with the principles below.</p>
+
+          <article class="standards-card reveal" style="--i:0;">
+            <span class="standards-logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="28" height="28"><path d="M4 12l5 5L20 6"/></svg>
+            </span>
+            <div class="standards-card-body">
+              <span class="standards-card-tag">Merit-Based</span>
+              <h5>Fair &amp; Equal Opportunity</h5>
+              <p>Every application is assessed fairly and consistently. Archie Velile Senior Secondary School is an equal opportunity employer and welcomes applications from all suitably qualified candidates.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="standards-showcase stagger">
+          <article class="standards-card reveal" style="--i:1;">
+            <span class="standards-logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="28" height="28"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="18" cy="8" r="2"/></svg>
+            </span>
+            <div class="standards-card-body">
+              <span class="standards-card-tag">Shortlisting</span>
+              <h5>Only Shortlisted Applicants Contacted</h5>
+              <p>Given the volume of applications received, only candidates selected for shortlisting will be contacted. If you have not heard from us within four weeks of the closing date, please consider your application unsuccessful.</p>
+            </div>
+          </article>
+
+          <article class="standards-card reveal" style="--i:2;">
+            <span class="standards-logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="28" height="28"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </span>
+            <div class="standards-card-body">
+              <span class="standards-card-tag">Deadlines</span>
+              <h5>Closing Dates Are Strictly Observed</h5>
+              <p>Late, incomplete, or emailed applications submitted after the stated closing date and time will not be considered, in keeping with our commitment to a fair process for all applicants.</p>
+            </div>
+          </article>
+
+          <article class="standards-card reveal" style="--i:1;">
+            <span class="standards-logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="28" height="28"><path d="M21 10c0 6.5-9 12-9 12s-9-5.5-9-12a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div class="standards-card-body">
+              <span class="standards-card-tag">Compliance</span>
+              <h5>Aligned With DBE &amp; SGB Requirements</h5>
+              <p>All recruitment is conducted in accordance with the requirements of the Department of Basic Education, the Eastern Cape Department of Education, and our School Governing Body.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -73,10 +195,35 @@
     <div class="container">
 
       <div class="vacancies-head reveal">
-        <span class="eyebrow">Career Opportunities</span>
+        <span class="eyebrow">Current Opportunities</span>
         <h2>Current Vacancies</h2>
-        <p class="lede">Archie Velile Senior Secondary School welcomes passionate and committed professionals dedicated to supporting quality education and serving our school community. We follow a transparent, fair, and professional recruitment process in line with Department of Basic Education requirements. We encourage qualified candidates to explore the opportunities below and apply.</p>
+        <p class="lede">Explore our current employment opportunities below. Use the search and filters to find a role suited to your skills and experience, then read the full job description before applying.</p>
       </div>
+
+      <!-- Featured Vacancy -->
+      <article class="leadership-featured reveal" aria-labelledby="featured-vacancy-title" style="margin-bottom: var(--space-3xl);">
+        <div class="leadership-featured-portrait-wrap">
+          <div class="leadership-featured-portrait" style="display:flex; align-items:center; justify-content:center; background: var(--gray-mist, #f7f8fa);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="72" height="72" style="color: var(--navy-institutional, #1a2540);"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          </div>
+          <div class="leadership-featured-caption">
+            <span class="leadership-featured-caption-role">Closing Soon</span>
+          </div>
+        </div>
+        <div class="leadership-featured-body">
+          <span class="vacancy-featured-badge">Featured Vacancy</span>
+          <span class="leadership-kicker">Administration · Ref: AVS-2026-02</span>
+          <h3 id="featured-vacancy-title">Administrative Clerk</h3>
+          <p class="leadership-principal-role">Permanent &middot; Dimbaza, Eastern Cape &middot; Closes 05 August 2026</p>
+          <p class="leadership-featured-bio">We are seeking a reliable, detail-oriented Administrative Clerk to support the school office — maintaining learner records, managing correspondence, and providing a warm first point of contact for parents and visitors. This is a permanent, full-time position closing soon.</p>
+          <div class="button-wrapper left" style="margin-top: 10px;">
+            <button class="learn-more">
+              <span class="circle" aria-hidden="true"><span class="icon arrow"></span></span>
+              <a href="#vacancy-AVS-2026-02" class="button-text">Full Vacancy</a>
+            </button>
+          </div>
+        </div>
+      </article>
 
       <!-- Search & filter toolbar -->
       <div class="vacancies-toolbar reveal-scale">
@@ -113,7 +260,7 @@
       <div class="vacancies-list stagger" id="vacancy-list">
 
         <!-- Vacancy: Food Handler -->
-        <article class="vacancy-card reveal" data-title="food handler" data-department="support" data-type="contract" data-status="open" data-ref="AVS-2026-01" style="--i:0;">
+        <article class="vacancy-card reveal" id="vacancy-AVS-2026-01" data-title="food handler" data-department="support" data-type="contract" data-status="open" data-ref="AVS-2026-01" style="--i:0;">
           <div class="vacancy-top">
             <div class="vacancy-title-group">
               <h3>Food Handler</h3>
@@ -143,7 +290,7 @@
             <button class="vacancy-copy-btn" type="button">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               Copy Link
-              <span class="vacancy-copy-toast" role="status">Vacancy link copied</span>
+              <span class="vacancy-copy-toast" role="status">Vacancy link copied successfully</span>
             </button>
             <div class="vacancy-apply-btn">
               <a href="./online-application.html" class="btn btn-discover">Apply Now</a>
@@ -192,7 +339,7 @@
         </article>
 
         <!-- Vacancy: Administrative Clerk -->
-        <article class="vacancy-card reveal" data-title="administrative clerk" data-department="admin" data-type="permanent" data-status="soon" data-ref="AVS-2026-02" style="--i:1;">
+        <article class="vacancy-card reveal" id="vacancy-AVS-2026-02" data-title="administrative clerk" data-department="admin" data-type="permanent" data-status="soon" data-ref="AVS-2026-02" style="--i:1;">
           <div class="vacancy-top">
             <div class="vacancy-title-group">
               <h3>Administrative Clerk</h3>
@@ -222,7 +369,7 @@
             <button class="vacancy-copy-btn" type="button">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               Copy Link
-              <span class="vacancy-copy-toast" role="status">Vacancy link copied</span>
+              <span class="vacancy-copy-toast" role="status">Vacancy link copied successfully</span>
             </button>
             <div class="vacancy-apply-btn">
               <a href="./online-application.html" class="btn btn-discover">Apply Now</a>
@@ -271,7 +418,7 @@
         </article>
 
         <!-- Vacancy: General Assistant -->
-        <article class="vacancy-card reveal" data-title="general assistant" data-department="facilities" data-type="temporary" data-status="open" data-ref="AVS-2026-03" style="--i:2;">
+        <article class="vacancy-card reveal" id="vacancy-AVS-2026-03" data-title="general assistant" data-department="facilities" data-type="temporary" data-status="open" data-ref="AVS-2026-03" style="--i:2;">
           <div class="vacancy-top">
             <div class="vacancy-title-group">
               <h3>General Assistant</h3>
@@ -301,7 +448,7 @@
             <button class="vacancy-copy-btn" type="button">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               Copy Link
-              <span class="vacancy-copy-toast" role="status">Vacancy link copied</span>
+              <span class="vacancy-copy-toast" role="status">Vacancy link copied successfully</span>
             </button>
             <div class="vacancy-apply-btn">
               <a href="./online-application.html" class="btn btn-discover">Apply Now</a>
@@ -349,7 +496,7 @@
         </article>
 
         <!-- Vacancy: Cleaner -->
-        <article class="vacancy-card reveal" data-title="cleaner" data-department="facilities" data-type="permanent" data-status="open" data-ref="AVS-2026-04" style="--i:3;">
+        <article class="vacancy-card reveal" id="vacancy-AVS-2026-04" data-title="cleaner" data-department="facilities" data-type="permanent" data-status="open" data-ref="AVS-2026-04" style="--i:3;">
           <div class="vacancy-top">
             <div class="vacancy-title-group">
               <h3>Cleaner</h3>
@@ -379,7 +526,7 @@
             <button class="vacancy-copy-btn" type="button">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               Copy Link
-              <span class="vacancy-copy-toast" role="status">Vacancy link copied</span>
+              <span class="vacancy-copy-toast" role="status">Vacancy link copied successfully</span>
             </button>
             <div class="vacancy-apply-btn">
               <a href="./online-application.html" class="btn btn-discover">Apply Now</a>
@@ -427,7 +574,7 @@
         </article>
 
         <!-- Vacancy: Education Assistant -->
-        <article class="vacancy-card reveal" data-title="education assistant" data-department="teaching" data-type="contract" data-status="soon" data-ref="AVS-2026-05" style="--i:4;">
+        <article class="vacancy-card reveal" id="vacancy-AVS-2026-05" data-title="education assistant" data-department="teaching" data-type="contract" data-status="soon" data-ref="AVS-2026-05" style="--i:4;">
           <div class="vacancy-top">
             <div class="vacancy-title-group">
               <h3>Education Assistant</h3>
@@ -457,7 +604,7 @@
             <button class="vacancy-copy-btn" type="button">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               Copy Link
-              <span class="vacancy-copy-toast" role="status">Vacancy link copied</span>
+              <span class="vacancy-copy-toast" role="status">Vacancy link copied successfully</span>
             </button>
             <div class="vacancy-apply-btn">
               <a href="./online-application.html" class="btn btn-discover">Apply Now</a>
@@ -511,8 +658,8 @@
         <span class="vacancies-empty-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
         </span>
-        <h3>No Matching Vacancies</h3>
-        <p>There are currently no open employment opportunities matching your search. We encourage you to check this page regularly for future vacancies at Archie Velile Senior Secondary School.</p>
+        <h3>There Are Currently No Open Vacancies</h3>
+        <p>We appreciate your interest in joining Archie Velile Senior Secondary School. Please visit this page regularly for future employment opportunities, or adjust your search and filters above.</p>
         <div class="vacancies-empty-actions">
           <div class="button-wrapper left">
             <button class="learn-more">
@@ -520,10 +667,130 @@
               <a href="../index.html" class="button-text">Return to Home</a>
             </button>
           </div>
-          <a href="./news.html" class="btn btn-secondary">View School News</a>
+          <a href="./contact.html" class="btn btn-secondary">Contact the School</a>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- RECRUITMENT PROCESS -->
+  <section class="section-soft foundation-section" id="recruitment-process">
+    <div class="foundation-pattern" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-head centered reveal foundation-head">
+        <span class="eyebrow">How It Works</span>
+        <h2>Our Recruitment Process</h2>
+        <p class="lede" style="margin-inline: auto; text-align: center;">A clear, consistent process from application to appointment — the same for every candidate, every time.</p>
+      </div>
+
+      <div class="leadership-philosophy-grid stagger" style="margin-top: var(--space-2xl);">
+        <div class="leadership-philosophy-item reveal" style="--i:0;">
+          <span class="leadership-philosophy-item-num">01</span>
+          <h4 style="color: #1a2540">Application Submitted</h4>
+          <p style="color: #727272;">Candidates apply online or in person before the stated closing date, with all required supporting documents.</p>
+        </div>
+        <div class="leadership-philosophy-item reveal" style="--i:1;">
+          <span class="leadership-philosophy-item-num">02</span>
+          <h4 style="color: #1a2540">Screening &amp; Shortlisting</h4>
+          <p style="color: #727272;">Applications are reviewed against the minimum requirements, and a shortlist is compiled for each vacancy.</p>
+        </div>
+        <div class="leadership-philosophy-item reveal" style="--i:2;">
+          <span class="leadership-philosophy-item-num">03</span>
+          <h4 style="color: #1a2540">Interviews</h4>
+          <p style="color: #727272;">Shortlisted candidates are invited to an interview with the relevant panel, which may include the SGB.</p>
+        </div>
+        <div class="leadership-philosophy-item reveal" style="--i:3;">
+          <span class="leadership-philosophy-item-num">04</span>
+          <h4 style="color: #1a2540">Appointment</h4>
+          <p style="color: #727272;">The successful candidate is notified directly and appointed in line with departmental approval processes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Frequently Asked Questions</span>
+        <h2>Applying to Archie Velile</h2>
+        <p class="lede">Answers to the questions we're asked most often about applying for a position at our school.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How do I submit my application?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Click "Apply Now" on the relevant vacancy to begin your application online, or submit a printed application with all supporting documents at the school office during office hours.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What documents do I need to include?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Each vacancy's full job description lists the specific supporting documents required, typically a certified ID copy, an updated CV, certified copies of qualifications, and two contactable references.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Will I be contacted if I am not shortlisted?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Only shortlisted candidates are contacted directly. If you haven't heard from us within four weeks of the closing date, please consider your application unsuccessful on this occasion.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I submit a late application?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. Closing dates are strictly observed to keep the process fair for all applicants, and late applications cannot be considered.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How can I share a vacancy with someone else?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Use the "Copy Link" button on any vacancy card to copy a direct link to that specific listing, which you can then share by message or email.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT THE RECRUITMENT OFFICE -->
+  <section class="journey-cta">
+    <div class="journey-cta-media reveal-scale">
+      <img src="../img/Institution.jpg" alt="" class="journey-cta-image">
+    </div>
+    <div class="journey-cta-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="journey-cta-card stagger">
+        <span class="journey-cta-icon reveal" style="--i:0;" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="40" height="40"><path d="M4 4h16v12H8l-4 4V4z"/></svg>
+        </span>
+
+        <h2 class="journey-cta-headline reveal" style="--i:1;">Have a Question About a Vacancy?</h2>
+        <p class="journey-cta-desc reveal" style="--i:2;">Our recruitment office is happy to help with questions about the application process, required documents, or a specific vacancy.</p>
+        <div class="button-wrapper left">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <a href="mailto:archievelilesss@gmail.com" class="button-text">Contact Office</a>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
